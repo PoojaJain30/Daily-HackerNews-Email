@@ -23,13 +23,13 @@ def main():
     news = nd.get_top_news(mega_story,mega_score)
     final_news = nd.sort_top10_news(news)
     print(final_news)
-    #email_body = nd.news_html(final_news)
+    email_body = nd.news_html(final_news)
     
-    #with open("emailList.csv", "r") as csvfile:
-       # reader = csv.reader(csvfile)
-        #for row in reader:
+    with open("emailList.csv", "r") as csvfile:
+        reader = csv.reader(csvfile)
+        for row in reader:
            # print(row)
-           # se.send_email(row,email_body)
+           se.send_email(row,email_body)
 
 
 if __name__ == '__main__':
